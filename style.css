@@ -1,0 +1,9 @@
+/* temporary colors, try something different for the card and amount(me) */
+:root{
+    --bg:#f9f2d5;
+    --card:#FFFFFF;
+    --amount:#FF6B35;
+    --button:#004E64;
+    --result:#FFEECC;
+}
+
