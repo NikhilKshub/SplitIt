@@ -104,3 +104,56 @@ label{
     margin-bottom:7px;
 }
 
+.tip-row{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:10px;
+    margin-bottom: 16px;
+}
+
+.tip-btn, #minus, #plus {
+    font-family:inherit;
+    font-size:15px;
+    font-weight: 700;
+    background:transparent;
+    color:var(--ink);
+    border:2px solid var(--ink);
+    border-radius:6px;
+    padding:12px 0;
+    cursor:pointer;
+}
+
+.tip-btn:hover, #minus:hover, #plus:hover{
+    background:var(--ink);
+    color:var(--paper);
+}
+
+.tip-btn.selected {
+    background:var(--ink);
+    color:var(--paper); 
+}
+/* solve the selected button issue  */
+
+.people-row{
+    display:flex;
+    gap:10px;
+    align-items: center;
+}
+
+#minus, #plus{
+    width:40px;
+    height:40px;
+    padding:0;
+}
+
+#people{
+    flex:1;
+    text-align:center;
+    font-size:22px;
+}
+
+button:focus-visible{
+    outline: 3px solid var(--stamp);
+    outline-offset: 2px;
+}
+
