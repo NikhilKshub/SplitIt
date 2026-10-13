@@ -26,7 +26,7 @@ body{
 
 .card{
     background:var(--paper);
-    padding: 60px 60px 75px;
+    padding: 40px 32px 48px;;
     border-radius:8px;
     width: 110%;
     max-width: 450px;
@@ -60,21 +60,47 @@ section{
 }
 
 section h2{
-    font-size:12px;
     text-transform: uppercase;
     letter-spacing:0.14em;
     color:var(--muted);
     font-weight: 700;
     margin-bottom:12px;
     font-size:15px;
-}
-
-h2{
     text-align: center;
 }
-
 #result-section{
     border-bottom:none;
     padding-bottom:0;
     margin-bottom:0;
 }
+input::-webkit-outer-spin-button , input::-webkit-inner-spin-button{-webkit-appearance: none; margin:0;}
+input[type="number"]{
+    -moz-appearance : textfield;
+    appearance: textfield;
+}
+
+input{
+    font-family: inherit;
+    font-size:18px;
+    color:var(--ink);
+    background:var(--field);
+    width:100%;
+    padding:12px 14px;
+    border:2px solid transparent;
+    border-radius:6px;
+    margin-top: 10px;
+}
+
+input:focus{
+    outline:none;
+    border-color:var(--ink);
+}
+
+label{
+    display:block;
+    font-size:14px;
+    font-weight:700;
+    color:var(--ink);
+    margin-bottom:7px;
+}
+
