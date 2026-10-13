@@ -10,6 +10,8 @@ const perPerson = document.getElementById("per-person");
 const tipButtons = document.querySelectorAll(".tip-btn");
 const today = document.getElementById("today");
 const swatches = document.querySelectorAll(".swatch");
+const pickBox = document.getElementById("pick-box");
+const spinBtn = document.getElementById("spin-btn");
 
 today.textContent = new
 Date().toDateString();
@@ -91,5 +93,30 @@ swatches.forEach(function(swatch){
         document.body.className = swatch.dataset.theme;
     });
 });
+
+let isSpinning = false;
+spinBtn.addEventListener("click",function(){
+    if(isSpinning){
+        return;
+    }
+    isSpinning =true;
+    pickBox.classList.remove("win");
+
+    const people = Number(peopleInput.value);
+    let ticks=0;
+    const timer = setInterval(function(){
+        const number = Math.floor(Math.random()* people) +1;
+        pickBox.textContent = "Person" + number;
+        ticks = ticks +1;
+        if(ticks === 25){
+            clearInterval(timer);
+            isSpinning = false;
+            pickBox.classList.add("win");
+        }
+    }, 80);
+});
+
+
+
 
 calculator();

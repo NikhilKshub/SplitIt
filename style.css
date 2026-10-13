@@ -149,7 +149,7 @@ label{
     margin-bottom: 16px;
 }
 
-.tip-btn, #minus, #plus {
+.tip-btn, #minus, #plus, #spin-btn{
     font-family:inherit;
     font-size:15px;
     font-weight: 700;
@@ -161,7 +161,7 @@ label{
     cursor:pointer;
 }
 
-.tip-btn:hover, #minus:hover, #plus:hover{
+.tip-btn:hover, #minus:hover, #plus:hover, #spin-btn:hover{
     background:var(--ink);
     color:var(--paper);
 }
@@ -257,4 +257,22 @@ footer p{
     letter-spacing: 0.2em;
     color:var(--muted);
     margin-top: 16px;
+}
+
+#pick-box{
+    font-family:"Bungee", sans-serif;
+    font-size:20px;
+    text-align:center;
+    background:var(--ink);
+    color:var(--paper);
+    padding:10px;
+    border-radius: 6px;
+    margin-bottom:8px;
+}
+#pick-box.win{background:var(--stamp);}
+#spin-btn{width:100%;}
+#roulette-section p{
+    font-size:15px;
+    color:var(--ink);
+    margin-bottom:4px;
 }
