@@ -22,14 +22,15 @@ body{
     min-height:100vh;
     padding:24px;
     justify-content: center;
+    
 }
 
 .card{
     background:var(--paper);
-    padding: 40px 32px 48px;;
+    padding: 40px 32px 48px;
     border-radius:8px;
-    width: 110%;
-    max-width: 450px;
+    width: 100%;
+    max-width: 470px;
 }
 
 header h1 {
@@ -88,7 +89,6 @@ input{
     padding:12px 14px;
     border:2px solid transparent;
     border-radius:6px;
-    margin-top: 10px;
 }
 
 input:focus{
@@ -137,12 +137,10 @@ label{
 .people-row{
     display:flex;
     gap:10px;
-    align-items: center;
 }
 
 #minus, #plus{
-    width:40px;
-    height:40px;
+    width:50px;
     padding:0;
 }
 
@@ -164,14 +162,14 @@ button:focus-visible{
     font-size:17px;
 }
 
-.final{
+#result-section .final{
     display:block;
-    padding-top:14px;
+    padding-top:18px;
     border-top: 2px solid var(--ink);
     margin-top:14px;
 }
 
-.final span{
+#result-section .final span{
     display:block;
     font-size:30px;
     font-family:"Bungee", sans-serif;
@@ -181,13 +179,14 @@ button:focus-visible{
 
 #reset{
     font-family:inherit;
-    font-size:16px;
+    font-size:19px;
     cursor:pointer;
     background:none;
     color:var(--muted);
     text-decoration: underline;
     border:none;
     margin-top:20px;
+    padding:0;
 }
 #reset:hover{color:var(--ink);}
 
