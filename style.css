@@ -157,3 +157,37 @@ button:focus-visible{
     outline-offset: 2px;
 }
 
+#result-section p{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size:17px;
+}
+
+.final{
+    display:block;
+    padding-top:14px;
+    border-top: 2px solid var(--ink);
+    margin-top:14px;
+}
+
+.final span{
+    display:block;
+    font-size:30px;
+    font-family:"Bungee", sans-serif;
+    color:var(--stamp);
+    line-height: 1.1;
+}
+
+#reset{
+    font-family:inherit;
+    font-size:16px;
+    cursor:pointer;
+    background:none;
+    color:var(--muted);
+    text-decoration: underline;
+    border:none;
+    margin-top:20px;
+}
+#reset:hover{color:var(--ink);}
+
