@@ -29,7 +29,9 @@ body{
     padding: 40px 32px 48px;
     border-radius:8px;
     width: 100%;
-    max-width: 470px;
+    mask: repeating-conic-gradient(from 140deg at 50% 30px,#0000 0,#000 1deg 79deg,#0000 80deg 180deg) 50% -30px/50.35px
+
+    /* added zigzag cut design */
 }
 
 header h1 {
@@ -187,4 +189,10 @@ button:focus-visible{
     padding:0;
 }
 #reset:hover{color:var(--ink);}
+
+#today{
+    text-align: right;
+    font-size:12px;
+    letter-spacing: 0.18em;
+}
 

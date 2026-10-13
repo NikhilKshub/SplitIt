@@ -8,7 +8,10 @@ const tipAmount = document.getElementById("tip-amount");
 const totalAmount = document.getElementById("total-amount");
 const perPerson = document.getElementById("per-person");
 const tipButtons = document.querySelectorAll(".tip-btn");
+const today = document.getElementById("today");
 
+today.textContent = new
+Date().toDateString();
 
 billInput.addEventListener("input", function() {calculator();});
 peopleInput.addEventListener("input", function(){calculator();});
