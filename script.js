@@ -10,6 +10,9 @@ const perPerson = document.getElementById("per-person");
 const tipButtons = document.querySelectorAll(".tip-btn");
 const today = document.getElementById("today");
 const lampBtn = document.getElementById("lamp");
+const theme1Btn = document.getElementById("theme1");
+const theme2Btn = document.getElementById("theme2");
+
 
 today.textContent = new
 Date().toDateString();
@@ -83,7 +86,15 @@ resetBtn.addEventListener("click",function(){
 })
 
 lampBtn.addEventListener("click",function(){
-    document.body.classList.toggle("day");
+    document.body.className = "day"
 });
+
+theme1Btn.addEventListener("click",function(){
+    document.body.className = "trattoria"
+})
+
+theme2Btn.addEventListener("click",function(){
+    document.body.className = "blueink"
+})
 
 calculator();

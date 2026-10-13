@@ -18,6 +18,27 @@ body.day{
     --line:#CBBFA9;
 }
 
+body.trattoria{
+    --table:#1F2A22;
+    --paper:#F3EBDC;
+    --ink:#1E1A16;
+    --muted:#8A7355;
+    --line:#B9AE98;
+    --field:#E6DCC7;
+    --stamp: #C4361F;
+}
+
+body.blueink{
+    --table:#17212B;
+    --paper:#EFEADF;
+    --ink:#1B2A41;
+    --muted:#6F7A8A;
+    --line:#B7B8B4;
+    --field:#E1DDD0;
+    --stamp: #C23B4E;
+
+}
+
 
 *{
     box-sizing:border-box;
@@ -212,6 +233,32 @@ button:focus-visible{
 #lamp{
     position:fixed;
     top:30px;
+    right:30px;
+    width:62px;
+    height:62px;
+    background:var(--paper);
+    font-size:36px;
+    cursor:pointer;
+    border: 2px solid var(--line);
+    border-radius: 50%;
+}
+
+#theme1{
+    position:fixed;
+    top:102px;
+    right:30px;
+    width:62px;
+    height:62px;
+    background:var(--paper);
+    font-size:36px;
+    cursor:pointer;
+    border: 2px solid var(--line);
+    border-radius: 50%;
+}
+
+#theme2{
+    position:fixed;
+    top:174px;
     right:30px;
     width:62px;
     height:62px;
