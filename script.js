@@ -7,20 +7,21 @@ const resetBtn = document.getElementById("reset");
 const tipAmount = document.getElementById("tip-amount");
 const totalAmount = document.getElementById("total-amount");
 const perPerson = document.getElementById("per-person");
-
 const tipButtons = document.querySelectorAll(".tip-btn");
-console.log(tipButtons);
+
+
+billInput.addEventListener("input", function() {calculator();});
+peopleInput.addEventListener("input", function(){calculator();});
 
 let tipPercent = 0;
 tipButtons.forEach(function(button){
     button.addEventListener("click",function(){
+        tipButtons.forEach(function(btn){
+            btn.classList.remove("selected");
+        });
+        button.classList.add("selected");
         tipPercent = Number(button.dataset.tip);
-        console.log(tipPercent);
         calculator();
-        billInput.addEventListener("input", function() {calculator();});
-        peopleInput.addEventListener("input", function(){calculator();});
-
-
     });
 });
 
@@ -36,3 +37,11 @@ function calculator(){
     totalAmount.textContent = total.toFixed(2);
     perPerson.textContent = eachPerson.toFixed(2);
 }
+
+customTip.addEventListener("input", function(){
+    tipButtons.forEach(function(btn){
+        btn.classList.remove("selected");
+    });
+    tipPercent = Number(customTip.value);
+    calculator();
+})
