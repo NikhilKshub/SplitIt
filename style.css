@@ -1,4 +1,4 @@
-:root{
+:root, .night{
     --paper:#F2EADB;
     --ink:#211C17;
     --muted:#85796B;
@@ -8,7 +8,7 @@
     --line:#BDB09C;
 }
  
-body.day{
+.day{
     --paper:#FBF7EE;
     --ink:#211C17;
     --muted:#7A6F62;
@@ -18,7 +18,7 @@ body.day{
     --line:#CBBFA9;
 }
 
-body.trattoria{
+.trattoria{
     --table:#1F2A22;
     --paper:#F3EBDC;
     --ink:#1E1A16;
@@ -28,7 +28,7 @@ body.trattoria{
     --stamp: #C4361F;
 }
 
-body.blueink{
+.blueink{
     --table:#17212B;
     --paper:#EFEADF;
     --ink:#1B2A41;
@@ -52,24 +52,27 @@ body{
     display:flex;
     align-items:center;
     min-height:100vh;
-    padding:24px;
+    padding:16px;
     justify-content: center;
-    transition: background 0.3s;
-    
+    transition: background 0.3s;   
+}
+
+main{
+    width:100%;
+    max-width:450px;
 }
 
 .card{
     background:var(--paper);
     padding: 40px 32px 48px;
     border-radius:8px;
-    width: 100%;
     mask: conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/60px 100%;
     transition: background 0.3s; 
     /* added zigzag cut design */
 }
 
 header h1 {
-  font-size: 40px;
+  font-size: 34px;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-align: center;
@@ -84,14 +87,14 @@ header p{
 }
 
 header{
-    padding-bottom: 20px;
+    padding-bottom: 12px;
     border-bottom:2px dashed var(--line);
-    margin-bottom:20px;
+    margin-bottom:14px;
 }
 
 section{
-    padding-bottom:20px;
-    margin-bottom:20px;
+    padding-bottom:14px;
+    margin-bottom:14px;
     border-bottom:2px dashed var(--line);
 }
 
@@ -230,41 +233,28 @@ button:focus-visible{
     letter-spacing: 0.18em;
 }
 
-#lamp{
-    position:fixed;
-    top:30px;
-    right:30px;
-    width:62px;
-    height:62px;
-    background:var(--paper);
-    font-size:36px;
-    cursor:pointer;
-    border: 2px solid var(--line);
-    border-radius: 50%;
+.themes{
+    display: flex;
+    gap:14px;
+    margin-bottom: 15px;
+    color:var(--paper);
+    justify-content: center;
 }
 
-#theme1{
-    position:fixed;
-    top:102px;
-    right:30px;
-    width:62px;
-    height:62px;
-    background:var(--paper);
-    font-size:36px;
+.swatch{
+    width:30px;
+    height:30px;
+    padding:0;
+    border-radius:50%;
+    background:var(--table);
+    color:inherit;
+    border:2px solid currentColor;
     cursor:pointer;
-    border: 2px solid var(--line);
-    border-radius: 50%;
 }
 
-#theme2{
-    position:fixed;
-    top:174px;
-    right:30px;
-    width:62px;
-    height:62px;
-    background:var(--paper);
-    font-size:36px;
-    cursor:pointer;
-    border: 2px solid var(--line);
-    border-radius: 50%;
+footer p{
+    text-align: center;
+    letter-spacing: 0.2em;
+    color:var(--muted);
+    margin-top: 16px;
 }

@@ -9,10 +9,7 @@ const totalAmount = document.getElementById("total-amount");
 const perPerson = document.getElementById("per-person");
 const tipButtons = document.querySelectorAll(".tip-btn");
 const today = document.getElementById("today");
-const lampBtn = document.getElementById("lamp");
-const theme1Btn = document.getElementById("theme1");
-const theme2Btn = document.getElementById("theme2");
-
+const swatches = document.querySelectorAll(".swatch");
 
 today.textContent = new
 Date().toDateString();
@@ -85,16 +82,14 @@ resetBtn.addEventListener("click",function(){
     totalAmount.textContent = "0.00";
 })
 
-lampBtn.addEventListener("click",function(){
-    document.body.className = "day"
+swatches.forEach(function(swatch){
+    swatch.addEventListener("click", function(){
+        swatches.forEach(function(other){
+            other.classList.remove("chosen");
+        });
+        swatch.classList.add("chosen");
+        document.body.className = swatch.dataset.theme;
+    });
 });
-
-theme1Btn.addEventListener("click",function(){
-    document.body.className = "trattoria"
-})
-
-theme2Btn.addEventListener("click",function(){
-    document.body.className = "blueink"
-})
 
 calculator();

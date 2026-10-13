@@ -10,10 +10,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button id="lamp" type="button" aria-label="Switch the lamp">💡</button>
-    <button id="theme1" type="button" aria-label="Trattoria">🕯️</button>
-    <button id="theme2" type="button" aria-label="Blueink">🔦</button>
     <main>
+        <div class="themes">
+            <button class="swatch night" data-theme="night" title="Night" aria-label="Night theme"></button>
+            <button class="swatch day" data-theme="day" title="Day" aria-label="Day theme"></button>
+            <button class="swatch trattoria" data-theme="trattoria" title="Trattoria" aria-label="Trattoria theme"></button>
+            <button class="swatch blueink" data-theme="blueink" title="blueink" aria-label="Blue ink theme"></button>
+        </div>
         <article class="card">
             <header>
                 <h1>SplitIt</h1>
@@ -57,8 +60,7 @@
             </section>
 
             <footer>
-                <p><strong></strong></p>
-                <!-- add a simple line type in footer -->
+                <p>Split fairly.</p>
             </footer>
         </article>
     </main>
