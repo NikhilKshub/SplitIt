@@ -29,7 +29,7 @@ tipButtons.forEach(function(button){
 function calculator(){
     const bill = Number(billInput.value);
     const people = Number(peopleInput.value);
-    if(people <= 0){
+    if(people < 1 || bill < 0 || tipPercent < 0){
         tipAmount.textContent = 0.00;
         totalAmount.textContent = 0.00;
         perPerson.textContent = 0.00;
@@ -59,15 +59,23 @@ plusBtn.addEventListener("click",function(){
 });
 
 minusBtn.addEventListener("click", function(){
-    if(Number(peopleInput.value) > 0) {
+    if(Number(peopleInput.value) > 1) {
         peopleInput.value= Number(peopleInput.value) - 1;
         calculator();        
-    };
+    }
 });
 
 resetBtn.addEventListener("click",function(){
-    peopleInput.value = 1;
-    billInput.value = 0;
-    customTip.value = 0;
-    
+    peopleInput.value =1;
+    tipPercent = 0 ;
+    billInput.value="";
+    customTip.value="";
+    tipButtons.forEach(function(btn){
+        btn.classList.remove("selected");
+    });
+    perPerson.textContent = "0.00";
+    tipAmount.textContent = "0.00";
+    totalAmount.textContent = "0.00";
 })
+
+calculator();
