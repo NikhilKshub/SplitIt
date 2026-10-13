@@ -1,9 +1,80 @@
 /* temporary colors, try something different for the card and amount(me) */
 :root{
-    --bg:#f9f2d5;
-    --card:#FFFFFF;
-    --amount:#FF6B35;
-    --button:#004E64;
-    --result:#FFEECC;
+    --paper:#F2EADB;
+    --ink:#211C17;
+    --muted:#85796B;
+    --field:#E8DDC9;
+    --stamp:#C4361F;
+    --table:#1F1A16;
+    --line:#BDB09C;
+}
+*{
+    box-sizing:border-box;
+    margin:0;
 }
 
+body{
+    font-family:"Karla",sans-serif;
+    background:var(--table);
+    color:var(--ink);
+    display:flex;
+    align-items:center;
+    min-height:100vh;
+    padding:24px;
+    justify-content: center;
+}
+
+.card{
+    background:var(--paper);
+    padding: 60px 60px 75px;
+    border-radius:8px;
+    width: 110%;
+    max-width: 450px;
+}
+
+header h1 {
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+header p{
+    text-align:center;
+    color:var(--muted);
+    font-size:14px;
+    margin-top:6px;
+}
+
+header{
+    padding-bottom: 20px;
+    border-bottom:2px dashed var(--line);
+    margin-bottom:20px;
+}
+
+section{
+    padding-bottom:20px;
+    margin-bottom:20px;
+    border-bottom:2px dashed var(--line);
+}
+
+section h2{
+    font-size:12px;
+    text-transform: uppercase;
+    letter-spacing:0.14em;
+    color:var(--muted);
+    font-weight: 700;
+    margin-bottom:12px;
+    font-size:15px;
+}
+
+h2{
+    text-align: center;
+}
+
+#result-section{
+    border-bottom:none;
+    padding-bottom:0;
+    margin-bottom:0;
+}
