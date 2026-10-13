@@ -1,0 +1,9 @@
+const billInput = document.getElementById("bill");
+const customTip = document.getElementById("custom-tip");
+const peopleInput = document.getElementById("people");
+const minusBtn = document.getElementById("minus");
+const plusBtn =document.getElementById("plus");
+const resetBtn = document.getElementById("reset");
+const tipAmount = document.getElementById("tip-amount");
+const totalAmount = document.getElementById("total-amount");
+const perPerson = document.getElementById("per-person");
