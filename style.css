@@ -7,6 +7,18 @@
     --table:#1F1A16;
     --line:#BDB09C;
 }
+ 
+body.day{
+    --paper:#FBF7EE;
+    --ink:#211C17;
+    --muted:#7A6F62;
+    --field:#EFE7D6;
+    --stamp:#C4361F;
+    --table:#D9CDB8;
+    --line:#CBBFA9;
+}
+
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -21,6 +33,7 @@ body{
     min-height:100vh;
     padding:24px;
     justify-content: center;
+    transition: background 0.3s;
     
 }
 
@@ -29,8 +42,8 @@ body{
     padding: 40px 32px 48px;
     border-radius:8px;
     width: 100%;
-    mask: repeating-conic-gradient(from 140deg at 50% 30px,#0000 0,#000 1deg 79deg,#0000 80deg 180deg) 50% -30px/50.35px
-
+    mask: conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/60px 100%;
+    transition: background 0.3s; 
     /* added zigzag cut design */
 }
 
@@ -196,3 +209,15 @@ button:focus-visible{
     letter-spacing: 0.18em;
 }
 
+#lamp{
+    position:fixed;
+    top:30px;
+    right:30px;
+    width:62px;
+    height:62px;
+    background:var(--paper);
+    font-size:36px;
+    cursor:pointer;
+    border: 2px solid var(--line);
+    border-radius: 50%;
+}

@@ -9,6 +9,7 @@ const totalAmount = document.getElementById("total-amount");
 const perPerson = document.getElementById("per-person");
 const tipButtons = document.querySelectorAll(".tip-btn");
 const today = document.getElementById("today");
+const lampBtn = document.getElementById("lamp");
 
 today.textContent = new
 Date().toDateString();
@@ -80,5 +81,9 @@ resetBtn.addEventListener("click",function(){
     tipAmount.textContent = "0.00";
     totalAmount.textContent = "0.00";
 })
+
+lampBtn.addEventListener("click",function(){
+    document.body.classList.toggle("day");
+});
 
 calculator();
