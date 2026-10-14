@@ -15,8 +15,7 @@ const spinBtn = document.getElementById("spin-btn");
 const shareBtn = document.getElementById("share-btn");
 const receipt = document.getElementById("receipt");
 const slipText = document.getElementById("slip-text");
-const slipBig = document.getElementById("slip-big");
-
+const copyBtn = document.getElementById("copy-btn");
 
 
 
@@ -29,6 +28,7 @@ Date().toDateString();
 billInput.addEventListener("input", function() {calculator();});
 peopleInput.addEventListener("input", function(){calculator();});
 
+// tip button input 
 let tipPercent = 0;
 tipButtons.forEach(function(button){
     button.addEventListener("click",function(){
@@ -42,6 +42,7 @@ tipButtons.forEach(function(button){
 });
 
 
+// calculations 
 function calculator(){
     const bill = Number(billInput.value);
     const people = Number(peopleInput.value);
@@ -60,6 +61,7 @@ function calculator(){
     perPerson.textContent = eachPerson.toFixed(2);
 }
 
+// custom tip 
 customTip.addEventListener("input", function(){
     tipButtons.forEach(function(btn){
         btn.classList.remove("selected");
@@ -68,7 +70,7 @@ customTip.addEventListener("input", function(){
     calculator();
 })
 
-
+// for number of people 
 plusBtn.addEventListener("click",function(){
     peopleInput.value = Number(peopleInput.value) + 1;
     calculator();
@@ -81,6 +83,7 @@ minusBtn.addEventListener("click", function(){
     }
 });
 
+// reset button 
 resetBtn.addEventListener("click",function(){
     peopleInput.value =1;
     tipPercent = 0 ;
@@ -94,6 +97,7 @@ resetBtn.addEventListener("click",function(){
     totalAmount.textContent = "0.00";
 })
 
+// themes 
 swatches.forEach(function(swatch){
     swatch.addEventListener("click", function(){
         swatches.forEach(function(other){
@@ -104,6 +108,7 @@ swatches.forEach(function(swatch){
     });
 });
 
+// who pays feature
 let isSpinning = false;
 spinBtn.addEventListener("click",function(){
     if(isSpinning){
@@ -125,19 +130,26 @@ spinBtn.addEventListener("click",function(){
     }, 80);
 });
 
+
+// share feature 
 // rewrite it by yourself without taking help and maybe try doing some design 
 shareBtn.addEventListener("click",function(){
-    let text = "SPLITIT\n";
+    let text = "SPLITIT\n\n";
     text = text + "Bill: " + billInput.value + "\n";
     text = text + "Tip: " + tipPercent + "\n";
     text = text + "Total: " + totalAmount.textContent + "\n";
     text = text + "People: " + peopleInput.value + "\n";
-    text = text + "Each pays: " + perPerson.textContent;
+    text = text + "Each pays: " + perPerson.textContent + "\n";
+    text = text + "Who pays: " + pickBox.textContent; 
 
     slipText.textContent = text; 
     receipt.showModal();
 });
 
+copyBtn.addEventListener("click",function(){
+    navigator.clipboard.writeText(slipText.textContent);
+    copyBtn.textContent = "Copied!";
+});
 
 
 

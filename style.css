@@ -18,16 +18,6 @@
     --line:#CBBFA9;
 }
 
-.trattoria{
-    --table:#1F2A22;
-    --paper:#F3EBDC;
-    --ink:#1E1A16;
-    --muted:#8A7355;
-    --line:#B9AE98;
-    --field:#E6DCC7;
-    --stamp: #C4361F;
-}
-
 .blueink{
     --table:#17212B;
     --paper:#EFEADF;
@@ -228,12 +218,14 @@ button:focus-visible{
 #reset:hover, #share-btn:hover{color:var(--ink);}
 #share-btn{margin-left:208px;}
 
+/* date */
 #today{
     text-align: right;
     font-size:12px;
     letter-spacing: 0.18em;
 }
 
+/* themes option */
 .themes{
     display: flex;
     gap:14px;
@@ -253,6 +245,7 @@ button:focus-visible{
     cursor:pointer;
 }
 
+/* footer line  */
 footer p{
     text-align: center;
     letter-spacing: 0.2em;
@@ -260,6 +253,7 @@ footer p{
     margin-top: 16px;
 }
 
+/* Who pays roulette feature  */
 #pick-box{
     font-family:"Bungee", sans-serif;
     font-size:20px;
@@ -278,6 +272,7 @@ footer p{
     margin-bottom:4px;
 }
 
+/* Share feature */
 dialog{
     padding:0;
     background:transparent;
@@ -314,4 +309,3 @@ dialog::backdrop{background:rgba(0,0,0,0.7);}
     background:#1a1a1a;
     color:#fff;
 }
-
