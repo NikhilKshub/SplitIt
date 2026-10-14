@@ -12,6 +12,16 @@ const today = document.getElementById("today");
 const swatches = document.querySelectorAll(".swatch");
 const pickBox = document.getElementById("pick-box");
 const spinBtn = document.getElementById("spin-btn");
+const shareBtn = document.getElementById("share-btn");
+const receipt = document.getElementById("receipt");
+const slipText = document.getElementById("slip-text");
+const slipBig = document.getElementById("slip-big");
+
+
+
+
+
+
 
 today.textContent = new
 Date().toDateString();
@@ -31,7 +41,7 @@ tipButtons.forEach(function(button){
     });
 });
 
-// i need bill amount , number of people , tip , total and then per person one 
+
 function calculator(){
     const bill = Number(billInput.value);
     const people = Number(peopleInput.value);
@@ -101,7 +111,6 @@ spinBtn.addEventListener("click",function(){
     }
     isSpinning =true;
     pickBox.classList.remove("win");
-
     const people = Number(peopleInput.value);
     let ticks=0;
     const timer = setInterval(function(){
@@ -115,6 +124,23 @@ spinBtn.addEventListener("click",function(){
         }
     }, 80);
 });
+
+// rewrite it by yourself without taking help and maybe try doing some design 
+shareBtn.addEventListener("click",function(){
+    let text = "SPLITIT\n";
+    text = text + "Bill: " + billInput.value + "\n";
+    text = text + "Tip: " + tipPercent + "\n";
+    text = text + "Total: " + totalAmount.textContent + "\n";
+    text = text + "People: " + peopleInput.value + "\n";
+    text = text + "Each pays: " + perPerson.textContent;
+
+    slipText.textContent = text; 
+    receipt.showModal();
+});
+
+
+
+
 
 
 

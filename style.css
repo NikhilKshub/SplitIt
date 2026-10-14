@@ -214,9 +214,9 @@ button:focus-visible{
     line-height: 1.1;
 }
 
-#reset{
+#reset, #share-btn{
     font-family:inherit;
-    font-size:19px;
+    font-size:20px;
     cursor:pointer;
     background:none;
     color:var(--muted);
@@ -225,7 +225,8 @@ button:focus-visible{
     margin-top:20px;
     padding:0;
 }
-#reset:hover{color:var(--ink);}
+#reset:hover, #share-btn:hover{color:var(--ink);}
+#share-btn{margin-left:208px;}
 
 #today{
     text-align: right;
@@ -276,3 +277,11 @@ footer p{
     color:var(--ink);
     margin-bottom:4px;
 }
+
+dialog{
+    padding:0;
+    background:transparent;
+    margin:auto;
+    border:none;
+}
+

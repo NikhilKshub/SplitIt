@@ -6,7 +6,7 @@
     <title>SplitIt</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Karla:ital,wght@0,200..800;1,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">   
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Courier+Prime:wght@400;700&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -64,12 +64,26 @@
                 <p>Total: <span id="total-amount">0.00</span></p>
                 <p class="final">Each person pays: <span id="per-person">0.00</span></p>
                 <button id="reset">Reset</button>
+                <button id="share-btn">Share receipt</button>
             </section>
 
             <footer>
                 <p>Split fairly.</p>
             </footer>
         </article>
+        <dialog id="receipt">
+            <div class="slip">
+                <pre id="slip-text"></pre>
+                <p id="slip-big"></p>
+                <button id="copy-btn">Copy</button>
+                <form method ="dialog">
+                    <button>Close</button>
+                </form>
+            </div>
+        </dialog>
+
+
+        
     </main>
     <script src="script.js"></script>
 </body>
