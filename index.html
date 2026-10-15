@@ -45,7 +45,7 @@
                 <label for="people">Number of people</label>
                 <div class="people-row">
                     <button id="minus">-</button>
-                    <input type="number" id="people" value="1">
+                    <input type="number" id="people" value="1" min="1">
                     <button id="plus">+</button>
                 </div>
             </section>
@@ -62,8 +62,10 @@
                 <p>Tip: <span id="tip-amount">0.00</span></p>
                 <p>Total: <span id="total-amount">0.00</span></p>
                 <p class="final">Each person pays: <span id="per-person">0.00</span></p>
-                <button id="reset">Reset</button>
-                <button id="share-btn">Share receipt</button>
+                <div class="actions">
+                    <button id="reset">Reset</button>
+                    <button id="share-btn">Share receipt</button>
+                </div>
             </section>
 
             <footer>

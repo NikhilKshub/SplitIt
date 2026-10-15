@@ -7,17 +7,13 @@
     --table:#1F1A16;
     --line:#BDB09C;
 }
- 
 .day{
     --paper:#FBF7EE;
-    --ink:#211C17;
     --muted:#7A6F62;
     --field:#EFE7D6;
-    --stamp:#C4361F;
     --table:#D9CDB8;
     --line:#CBBFA9;
 }
-
 .blueink{
     --table:#17212B;
     --paper:#EFEADF;
@@ -28,13 +24,7 @@
     --stamp: #C23B4E;
 
 }
-
-
-*{
-    box-sizing:border-box;
-    margin:0;
-}
-
+*{box-sizing:border-box; margin:0;}
 body{
     font-family:"Karla",sans-serif;
     background:var(--table);
@@ -92,7 +82,6 @@ section h2{
     text-transform: uppercase;
     letter-spacing:0.14em;
     color:var(--muted);
-    font-weight: 700;
     margin-bottom:12px;
     font-size:15px;
     text-align: center;
@@ -103,10 +92,6 @@ section h2{
     margin-bottom:0;
 }
 input::-webkit-outer-spin-button , input::-webkit-inner-spin-button{-webkit-appearance: none; margin:0;}
-input[type="number"]{
-    -moz-appearance : textfield;
-    appearance: textfield;
-}
 
 input{
     font-family: inherit;
@@ -117,6 +102,7 @@ input{
     padding:12px 14px;
     border:2px solid transparent;
     border-radius:6px;
+    appearance: textfield;
 }
 
 input:focus{
@@ -151,14 +137,9 @@ label{
     cursor:pointer;
 }
 
-.tip-btn:hover, #minus:hover, #plus:hover, #spin-btn:hover{
+.tip-btn:hover, .tip-btn.selected, #minus:hover, #plus:hover, #spin-btn:hover{
     background:var(--ink);
     color:var(--paper);
-}
-
-.tip-btn.selected {
-    background:var(--ink);
-    color:var(--paper); 
 }
 
 .people-row{
@@ -196,7 +177,7 @@ button:focus-visible{
     margin-top:14px;
 }
 
-#result-section .final span{
+#per-person{
     display:block;
     font-size:30px;
     font-family:"Bungee", sans-serif;
@@ -216,7 +197,10 @@ button:focus-visible{
     padding:0;
 }
 #reset:hover, #share-btn:hover{color:var(--ink);}
-#share-btn{margin-left:208px;}
+.actions{
+    display:flex;
+    justify-content:space-between;
+}
 
 /* date */
 #today{
@@ -268,7 +252,6 @@ footer p{
 #spin-btn{width:100%;}
 #roulette-section p{
     font-size:15px;
-    color:var(--ink);
     margin-bottom:4px;
 }
 
@@ -287,7 +270,7 @@ dialog::backdrop{background:rgba(0,0,0,0.7);}
     max-width: 90vw;
     background:#fff;
     color:#1a1a1a;
-    padding: 30px 30px;
+    padding: 30px;
 }
 #slip-text{
     font-family:"Courier Prime", monospace;

@@ -17,24 +17,24 @@ const receipt = document.getElementById("receipt");
 const slipText = document.getElementById("slip-text");
 const copyBtn = document.getElementById("copy-btn");
 
-
-
-
-
-
 today.textContent = new
 Date().toDateString();
-
 billInput.addEventListener("input", function() {calculator();});
 peopleInput.addEventListener("input", function(){calculator();});
+
+// reusable 
+function clearTips(){
+    tipButtons.forEach(function(btn){
+        btn.classList.remove("selected");
+    });
+}
 
 // tip button input 
 let tipPercent = 0;
 tipButtons.forEach(function(button){
     button.addEventListener("click",function(){
-        tipButtons.forEach(function(btn){
-            btn.classList.remove("selected");
-        });
+        clearTips();
+        customTip.value = "";
         button.classList.add("selected");
         tipPercent = Number(button.dataset.tip);
         calculator();
@@ -47,9 +47,9 @@ function calculator(){
     const bill = Number(billInput.value);
     const people = Number(peopleInput.value);
     if(people < 1 || bill < 0 || tipPercent < 0){
-        tipAmount.textContent = 0.00;
-        totalAmount.textContent = 0.00;
-        perPerson.textContent = 0.00;
+        tipAmount.textContent = "0.00";
+        totalAmount.textContent = "0.00";
+        perPerson.textContent = "0.00";
         return;
     }
     const tip = bill * tipPercent / 100 ;
@@ -63,11 +63,9 @@ function calculator(){
 
 // custom tip 
 customTip.addEventListener("input", function(){
-    tipButtons.forEach(function(btn){
-        btn.classList.remove("selected");
-    });
     tipPercent = Number(customTip.value);
     calculator();
+    clearTips();
 })
 
 // for number of people 
@@ -89,26 +87,21 @@ resetBtn.addEventListener("click",function(){
     tipPercent = 0 ;
     billInput.value="";
     customTip.value="";
-    tipButtons.forEach(function(btn){
-        btn.classList.remove("selected");
-    });
     perPerson.textContent = "0.00";
     tipAmount.textContent = "0.00";
     totalAmount.textContent = "0.00";
+    customTip();
 })
 
 // themes 
 swatches.forEach(function(swatch){
-    swatch.addEventListener("click", function(){
-        swatches.forEach(function(other){
-            other.classList.remove("chosen");
-        });
-        swatch.classList.add("chosen");
+    swatch.addEventListener("click",function(){
         document.body.className = swatch.dataset.theme;
     });
 });
 
-// who pays feature
+
+// who pays feature ( understand this also and do it without taking help )
 let isSpinning = false;
 spinBtn.addEventListener("click",function(){
     if(isSpinning){
@@ -130,9 +123,8 @@ spinBtn.addEventListener("click",function(){
     }, 80);
 });
 
-
 // share feature 
-// rewrite it by yourself without taking help and maybe try doing some design 
+// (rewrite it by yourself without taking help and maybe try doing some design)
 shareBtn.addEventListener("click",function(){
     let text = "SPLITIT\n\n";
     text = text + "Bill: " + billInput.value + "\n";
@@ -151,10 +143,8 @@ copyBtn.addEventListener("click",function(){
     copyBtn.textContent = "Copied!";
 });
 
-
-
-
-
-
-
 calculator();
+
+
+
+// learn and understand 2 features JS code and do it without taking help :- sharebtn slip layout and the who pays feature
