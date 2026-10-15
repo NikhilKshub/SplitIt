@@ -83,13 +83,18 @@ minusBtn.addEventListener("click", function(){
     }
 });
 
+// reset button does not resets who pays feature - fix it
 // reset button 
 resetBtn.addEventListener("click",function(){
     peopleInput.value =1;
     tipPercent = 0 ;
     billInput.value="";
     customTip.value="";
+    pickBox.classList.remove("win");
+
     calculator();
+    
+
 })
 
 // themes 
@@ -99,29 +104,7 @@ swatches.forEach(function(swatch){
     });
 });
 
-
-// // who pays feature ( understand this also and do it without taking help )
-// let isSpinning = false;
-// spinBtn.addEventListener("click",function(){
-//     if(isSpinning){
-//         return;
-//     }
-//     isSpinning =true;
-//     pickBox.classList.remove("win");
-//     const people = Number(peopleInput.value);
-//     let ticks=0;
-//     const timer = setInterval(function(){
-//         const number = Math.floor(Math.random()* people) +1;
-//         pickBox.textContent = "Person" + number;
-//         ticks = ticks +1;
-//         if(ticks === 25){
-//             clearInterval(timer);
-//             isSpinning = false;
-//             pickBox.classList.add("win");
-//         }
-//     }, 80);
-// });
-
+// who pays feature
 spinBtn.addEventListener("click",function(){
     pickBox.classList.remove("win");
     const people = Number(peopleInput.value);
@@ -143,47 +126,20 @@ spinBtn.addEventListener("click",function(){
     },80);
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// share feature is showing bill as NaN - whyy??? -- ahh  it was because i forgot to write .value after billInput
 // share feature 
-// (rewrite it by yourself without taking help and maybe try doing some design)
 shareBtn.addEventListener("click",function(){
     let text = "SPLITIT\n\n";
-    text = text + "Bill: " + billInput.value + "\n";
+    text = text + "Bill: " + Number(billInput.value)+ "\n";
     text = text + "Tip: " + tipPercent + "\n";
     text = text + "Total: " + totalAmount.textContent + "\n";
     text = text + "People: " + peopleInput.value + "\n";
-    text = text + "Each pays: " + perPerson.textContent + "\n";
-    text = text + "Who pays: " + pickBox.textContent; 
-
-    slipText.textContent = text; 
+    text = text + "Each pays: " + perPerson.textContent;
+    if(pickBox.classList.contains("win")){
+        text = text + "\nWho pays: " + pickBox.textContent;
+    }
+    slipText.textContent = text;
+    copyBtn.textContent = "copy";
     receipt.showModal();
 });
 
@@ -191,6 +147,25 @@ copyBtn.addEventListener("click",function(){
     navigator.clipboard.writeText(slipText.textContent);
     copyBtn.textContent = "Copied!";
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 calculator();
 
