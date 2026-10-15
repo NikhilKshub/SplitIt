@@ -19,19 +19,15 @@ const copyBtn = document.getElementById("copy-btn");
 
 today.textContent = new
 Date().toDateString();
-
-// simplified 
 billInput.addEventListener("input",calculator);
 peopleInput.addEventListener("input",calculator);
 
-// reusable 
 function clearTips(){
     tipButtons.forEach(function(btn){
         btn.classList.remove("selected");
     });
 }
 
-// tip button input 
 let tipPercent = 0;
 tipButtons.forEach(function(button){
     button.addEventListener("click",function(){
@@ -57,13 +53,11 @@ function calculator(){
     const tip = bill * tipPercent / 100 ;
     const total = bill + tip;
     const eachPerson = total / people;
-    // using tofixed() to get only 2 decimal places
     tipAmount.textContent = tip.toFixed(2); 
     totalAmount.textContent = total.toFixed(2);
     perPerson.textContent = eachPerson.toFixed(2);
 }
-
-// custom tip 
+ 
 customTip.addEventListener("input", function(){
     tipPercent = Number(customTip.value);
     calculator();
@@ -75,7 +69,6 @@ plusBtn.addEventListener("click",function(){
     peopleInput.value = Number(peopleInput.value) + 1;
     calculator();
 });
-
 minusBtn.addEventListener("click", function(){
     if(Number(peopleInput.value) > 1) {
         peopleInput.value= Number(peopleInput.value) - 1;
@@ -83,18 +76,15 @@ minusBtn.addEventListener("click", function(){
     }
 });
 
-// reset button does not resets who pays feature - fix it
 // reset button 
 resetBtn.addEventListener("click",function(){
     peopleInput.value =1;
     tipPercent = 0 ;
     billInput.value="";
     customTip.value="";
+    pickBox.textContent = "?";
     pickBox.classList.remove("win");
-
     calculator();
-    
-
 })
 
 // themes 
@@ -126,7 +116,6 @@ spinBtn.addEventListener("click",function(){
     },80);
 });
 
-// share feature is showing bill as NaN - whyy??? -- ahh  it was because i forgot to write .value after billInput
 // share feature 
 shareBtn.addEventListener("click",function(){
     let text = "SPLITIT\n\n";
@@ -148,27 +137,4 @@ copyBtn.addEventListener("click",function(){
     copyBtn.textContent = "Copied!";
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 calculator();
-
-
-
-// learn and understand 2 features JS code and do it without taking help :- sharebtn slip layout and the who pays feature

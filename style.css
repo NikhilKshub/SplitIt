@@ -36,7 +36,6 @@ body{
     justify-content: center;
     transition: background 0.3s;   
 }
-
 main{
     width:100%;
     max-width:450px;
@@ -48,7 +47,6 @@ main{
     border-radius:8px;
     mask: conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/60px 100%;
     transition: background 0.3s; 
-    /* added zigzag cut design */
 }
 
 header h1 {
@@ -92,7 +90,6 @@ section h2{
     margin-bottom:0;
 }
 input::-webkit-outer-spin-button , input::-webkit-inner-spin-button{-webkit-appearance: none; margin:0;}
-
 input{
     font-family: inherit;
     font-size:18px;
@@ -209,7 +206,7 @@ button:focus-visible{
     letter-spacing: 0.18em;
 }
 
-/* themes option */
+/* themes */
 .themes{
     display: flex;
     gap:14px;
@@ -262,7 +259,6 @@ dialog{
     margin:auto;
     border:none;
 }
-
 dialog::backdrop{background:rgba(0,0,0,0.7);}
 
 .slip{
@@ -276,7 +272,6 @@ dialog::backdrop{background:rgba(0,0,0,0.7);}
     font-family:"Courier Prime", monospace;
     font-size:20px;
 }
-
 .slip button{
     display:block;
     width:100%;
