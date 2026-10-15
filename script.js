@@ -19,8 +19,10 @@ const copyBtn = document.getElementById("copy-btn");
 
 today.textContent = new
 Date().toDateString();
-billInput.addEventListener("input", function() {calculator();});
-peopleInput.addEventListener("input", function(){calculator();});
+
+// simplified 
+billInput.addEventListener("input",calculator);
+peopleInput.addEventListener("input",calculator);
 
 // reusable 
 function clearTips(){
@@ -87,10 +89,7 @@ resetBtn.addEventListener("click",function(){
     tipPercent = 0 ;
     billInput.value="";
     customTip.value="";
-    perPerson.textContent = "0.00";
-    tipAmount.textContent = "0.00";
-    totalAmount.textContent = "0.00";
-    customTip();
+    calculator();
 })
 
 // themes 
@@ -101,27 +100,77 @@ swatches.forEach(function(swatch){
 });
 
 
-// who pays feature ( understand this also and do it without taking help )
-let isSpinning = false;
+// // who pays feature ( understand this also and do it without taking help )
+// let isSpinning = false;
+// spinBtn.addEventListener("click",function(){
+//     if(isSpinning){
+//         return;
+//     }
+//     isSpinning =true;
+//     pickBox.classList.remove("win");
+//     const people = Number(peopleInput.value);
+//     let ticks=0;
+//     const timer = setInterval(function(){
+//         const number = Math.floor(Math.random()* people) +1;
+//         pickBox.textContent = "Person" + number;
+//         ticks = ticks +1;
+//         if(ticks === 25){
+//             clearInterval(timer);
+//             isSpinning = false;
+//             pickBox.classList.add("win");
+//         }
+//     }, 80);
+// });
+
 spinBtn.addEventListener("click",function(){
-    if(isSpinning){
-        return;
-    }
-    isSpinning =true;
     pickBox.classList.remove("win");
     const people = Number(peopleInput.value);
-    let ticks=0;
+    if(people < 2){
+        pickBox.textContent = "Are you alone?😭 ";
+        return;
+    }
+    spinBtn.disabled = true;
+    let ticks = 0 ;
     const timer = setInterval(function(){
-        const number = Math.floor(Math.random()* people) +1;
+        const number = Math.floor(Math.random() * people)+1;
         pickBox.textContent = "Person" + number;
-        ticks = ticks +1;
-        if(ticks === 25){
+        ticks = ticks + 1;
+        if(ticks === 20){
             clearInterval(timer);
-            isSpinning = false;
+            spinBtn.disabled = false;
             pickBox.classList.add("win");
         }
-    }, 80);
+    },80);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // share feature 
 // (rewrite it by yourself without taking help and maybe try doing some design)
